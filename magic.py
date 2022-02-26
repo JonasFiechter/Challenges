@@ -14,7 +14,7 @@ class Magic:
     def __init__(self):
         pass
 
-    def replace(string, character, new_character):
+    def replace_letter(string, character, new_character):
         new_string = ''
         for c in string:
             if c == character:
@@ -26,9 +26,10 @@ class Magic:
 
     def replace_comprehension(string, character, new_character):
         
-        return []
+        return ''.join(c.replace(character, new_character) for c in string)
 
 
 if __name__ == '__main__':
     var = 'Beyond files and things'
-    print(Magic.replace(var, 'a', '#'))
+    print(Magic.replace_letter(var, 'a', '#'))
+    print(Magic.replace_comprehension(var, 'a', '@'))
