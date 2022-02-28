@@ -28,7 +28,7 @@ class Magic:
         return ''.join(c.replace(character, new_character) for c in string)
 
     def str_length(string):        
-        return len(string)
+        return f'length of string: {len(string)}'
 
     def list_slice(string:str, tuple:tuple):
         if len(string) == 0:
@@ -43,6 +43,6 @@ if __name__ == '__main__':
     var = 'Beyond files and things'
     print(Magic.replace_letter(var, 'a', '#'))
     print(Magic.replace_comprehension(var, 'a', '@'))
-    print(Magic.str_length(f'length of string: {var}'))
+    print(Magic.str_length(var))
     print(Magic.list_slice(var,(2, 4)))
     print(Magic.trim(var))
