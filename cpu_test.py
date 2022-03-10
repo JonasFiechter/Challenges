@@ -1,3 +1,5 @@
+# Random test for cpu
+
 from time import time
 
 def calc_time(n1, n2):
