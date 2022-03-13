@@ -53,7 +53,7 @@ def func_arithmetic(data):
 
 
 if __name__ == '__main__':
-    data='1200 * 255'
+    data='1 * 25'
     var_1 = arithmetic(data)
 
     print(f'Testing results with class, data = '
