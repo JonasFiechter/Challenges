@@ -14,3 +14,14 @@ Notes
 Notice that num is also included in the returned array.
 */
 
+
+function multiples_array(num, length) {
+    my_array = []
+    for (let i = num; my_array.length < length; i++) {
+        if (i % num === 0) {
+            my_array.push(i)
+        }
+    } return my_array
+}
+
+console.log(multiples_array(7, 5), multiples_array(12, 10), multiples_array(17, 6))
