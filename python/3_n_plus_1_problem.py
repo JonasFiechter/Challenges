@@ -24,9 +24,6 @@ Notes
 Assume a and b never take the same number of steps to reach 1.
 '''
 
-from cgi import test
-
-
 class Collatz:
 
     def __init__(self) -> None:
