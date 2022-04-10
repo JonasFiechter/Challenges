@@ -13,18 +13,21 @@ sevenBoom([8, 6, 33, 100]) ➞ "there is no 7 in the array"
 sevenBoom([2, 55, 60, 97, 86]) ➞ "Boom!"
 // 97 contains the number seven.
 */
-const test = [1, 2, 3, 4, 5, 6, 7]
+const test = [2, 55, 60, 97, 86]
 
-const seven_boom = function(array_) {
-    for (let i = 0; i < array_.lenght; i++) {
-        console.log(array_[i])
-    }
+const seven_boom = function(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        arr_in = arr[i].toString()
+        if (arr[i] === 7) {
+            return 'Boom!'
+        } else {
+            for (let i_2 = 0; i_2 < arr_in.length; i_2++) {
+                if (arr_in[i_2] === '7') {
+                    return 'Boom!'
+                }
+            }
+        }
+    } return 'there is no 7 in array'
 }
 
-seven_boom(test)
-
-for (let i = 0; i < test.length; i++) {
-    if (test[i] === 7) {
-        console.log('works', test[i])
-    }
-}
+console.log(seven_boom(test))
