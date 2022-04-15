@@ -23,7 +23,8 @@ Money at the extremes are safe.
 class CassinoHead:
     def __init__(self, data):
         self.data = data
-        self.safe = True
+        self.safe_right = True
+        self.safe_left = True
         self.money_indexes = [n for n, i in enumerate(self.data) if i == '$']
 
     def check_direction(self, position):
@@ -32,24 +33,24 @@ class CassinoHead:
 
         for i in right:
             if i == 'G' or i == '$':
-                self.safe = True
+                self.safe_right = True
                 break
             elif i == 'T':
-                self.safe = False
+                self.safe_right = False
                 break
 
         for i in left[::-1]:
             if i == 'G' or i == '$':
-                self.safe = True
+                self.safe_left = True
                 break
             elif i == 'T':
-                self.safe = False
+                self.safe_left = False
                 break
 
     def security(self):
         for p in self.money_indexes:
             self.check_direction(position=p)
-        if self.safe:
+        if self.safe_left and self.safe_right:
             print('Safe')
             return 'Safe'
         else:
