@@ -25,6 +25,4 @@ def relation_to_luke(relative):
     else:
         print(f'{relative} Não é parente')
 
-
-
 relation_to_luke('Darth Vader'.upper())
