@@ -16,13 +16,14 @@ relation_to_luke("Han") ➞ "Luke, I am your brother in law."
 Notes
 N/A
 '''
-relatives_dict = {'Darth Vader': "Luke, I am your father.",
-                 'Leia': "Luke, I am your sister."}
+
+relatives_dict = {'DARTH VADER': "Luke, I am your father.",
+                 'LEIA': "Luke, I am your sister.",
+                 'HAN':	'brother in law'}
 
 def relation_to_luke(relative):
+    relative = relative.upper()
     if relatives_dict[relative]:
-        print(f'{relatives_dict[relative]}')
-    else:
-        print(f'{relative} Não é parente')
+        return relatives_dict[relative]
 
-relation_to_luke('Darth Vader'.upper())
+print(relation_to_luke('darth vader'))
