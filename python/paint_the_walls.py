@@ -21,4 +21,3 @@ rate = {
 
 time(rate, people, walls) ➞ 22
 '''
-
