@@ -27,7 +27,6 @@ def hangman(entry, letters_guessed):
             result += l
         else:
             result += '-'
-    
     return result
 
 
