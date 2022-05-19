@@ -58,7 +58,7 @@ class CassinoHead:
             return 'ALARM!'
 
 if __name__ == '__main__':
-    a = "xxxxTTxGxx$xxTxxx"
+    a = "xxxxTTxGxx$xGxTxxx"
     b = "xxTxxG$xxxx$xxxx"
 
     situation_1 = CassinoHead(a)
