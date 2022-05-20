@@ -87,5 +87,5 @@ class Matrix:
 
 
 if __name__ == '__main__':
-    a = Matrix(30)
+    a = Matrix(10)
     a.id_matrix()
