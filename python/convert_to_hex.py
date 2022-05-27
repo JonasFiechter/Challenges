@@ -22,7 +22,7 @@ class HexConverter:
     def __init__(self, entry) -> None:
         self.entry = entry
         self.result = ''
-        self.di = {
+        self.dict = {
                 '0000': 0,
                 '0001': 1,
                 '0010': 2,
@@ -45,11 +45,11 @@ class HexConverter:
         temp = bin(ord(letter))[2:].zfill(8)
         a, b = temp[:4], temp[4:]
 
-        for i in self.di:
+        for i in self.dict:
             if a == i:
-                a = self.di[i]
+                a = self.dict[i]
             elif b == i:
-                b = self.di[i]
+                b = self.dict[i]
 
         temp = str(a) + str(b)
         return temp
@@ -62,6 +62,8 @@ class HexConverter:
 
 
 if __name__ == '__main__':
+    test = HexConverter("hello horld")
+    print(test.convert_all())
     test = HexConverter("Marty Poppinson")
     print(test.convert_all())
 
