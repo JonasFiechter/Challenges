@@ -29,6 +29,7 @@ def has_friday_13(month, year):
     cal = Calendar()
     monthdays = cal.monthdatescalendar(year, month)
     for week in monthdays:
+        print(f'\nWEEK=> {week}\n')
         for day in week:
             if day.strftime('%d') == '13' and day.weekday() == 4:
                 return True
