@@ -30,7 +30,12 @@ Alternatively, you can solve this challenge via recursion.
 A recursive version of this challenge can be found via this link.
 */
 
-
+//  
 const shiftToRight = (e1, e2) => e1 >> e2
 
 console.log(shiftToRight(80, 3))
+console.log(shiftToRight(-24, 2))
+console.log(shiftToRight(-5, 1))
+console.log(shiftToRight(4666, 6))
+console.log(shiftToRight(3777, 6))
+console.log(shiftToRight(-512, 10))
