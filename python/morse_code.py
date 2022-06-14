@@ -32,9 +32,6 @@ Notes
     One space " " is expected after each character, except the last one.
 '''
 
-from hashlib import new
-
-
 class MorseTranslate:
     def __init__(self, message) -> None:
         self.message = message

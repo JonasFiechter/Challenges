@@ -21,3 +21,12 @@ rate = {
 
 time(rate, people, walls) ➞ 22
 '''
+
+rate1 = {
+  "people": 10,
+  "walls": 100,
+  "minutes": 22
+}
+
+def time(rate, people, walls):
+	pass

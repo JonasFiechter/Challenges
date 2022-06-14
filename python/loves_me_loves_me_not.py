@@ -21,9 +21,6 @@ The first phrase is always "Loves me".
 '''
 
 #  Solution 1
-import string
-
-
 def loves_me(num):
     phrase = ''
     for i in range(num):
