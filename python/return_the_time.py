@@ -26,9 +26,9 @@ Round the answer to one decimal place.
 The speed limit and average speed are both given in mi/hr
 '''
 
-
 def time_saved(speed_limit, avg_speed, distance_traveled):
-    return round((distance_traveled / speed_limit * 60) - (distance_traveled / avg_speed * 60), 1)
+    return round(number=(distance_traveled / speed_limit * 60) - (distance_traveled / avg_speed * 60),
+                 ndigits=1)
 
 
 print(time_saved(80, 90, 40))
