@@ -12,15 +12,10 @@ and returns the result from the two given integers.
 
 Examples
 shiftToRight(80, 3) ➞ 10
-
 shiftToRight(-24, 2) ➞ -6
-
 shiftToRight(-5, 1) ➞ -3
-
 shiftToRight(4666, 6) ➞ 72
-
 shiftToRight(3777, 6) ➞ 59
-
 shiftToRight(-512, 10) ➞ -1
 Notes
 There will be no negative values for the second parameter y.
@@ -31,7 +26,10 @@ A recursive version of this challenge can be found via this link.
 */
 
 //  
-const shiftToRight = (e1, e2) => e1 >> e2
+function shiftToRight (e1, e2) {
+    
+}
+
 
 console.log(shiftToRight(80, 3))
 console.log(shiftToRight(-24, 2))
