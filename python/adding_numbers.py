@@ -12,6 +12,7 @@ Notes
 If any input is "" or None, return "Invalid Operation".
 '''
 
+
 def add(value_01, value_02):
     print(int(value_01), int(value_02))
 

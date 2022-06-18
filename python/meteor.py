@@ -13,7 +13,6 @@ will_hit("y = -4x + 6", (1, 2)) ➞ True
 will_hit("y = 2x + 6", (3, 2)) ➞ False
 
 Notes
-
     The b value will never be zero or blank.
     The m value will always be an integer.
     If the m value is 1, the "1" will be shown.
