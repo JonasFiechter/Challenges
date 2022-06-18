@@ -18,6 +18,8 @@ The number of vowels will match the number of * characters in the censored
 string.
 '''
 
+import re
+
 def uncensor(censored, vowels):
     vowels = [letter for letter in vowels]
 
@@ -29,3 +31,10 @@ def uncensor(censored, vowels):
 
 print(uncensor("Wh*r* d*d my v*w*ls g*?", "eeioeo"))
 print(uncensor("*PP*RC*S*", "UEAE"))
+
+# Lets try regular expressions
+
+def uncensor_reg(censored, vowels):
+    print(re.findall(r'[*]{1}.*?', censored))
+
+uncensor_reg("Wh*r* d*d my v*w*ls g*?", "eeioeo")
