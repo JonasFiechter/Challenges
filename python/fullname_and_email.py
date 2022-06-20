@@ -36,3 +36,4 @@ print(emp_1.email)
 
 emp_2 = Employee("Mary",  "Sue")
 print(emp_2.email)
+emp_2.print_fullname()
