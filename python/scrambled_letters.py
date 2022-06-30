@@ -17,8 +17,7 @@ word list.
 
 def scrambled(_list, mask):
     scrambled_list = []
-    sc_list = sorted([w for w in _list if len(w) == len(mask)])
-    for w in sc_list:
+    for w in sorted([w for w in _list if len(w) == len(mask)]):
         match = True
         for index, letter in enumerate(w):
             if letter != mask[index] and mask[index] != '*':
