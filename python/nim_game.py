@@ -85,7 +85,7 @@ Veja um exemplo de como deve funcionar o jogo:
 def computador_escolhe_jogada(n, m):
     return
 
-def usuario_escolhe_jogada():
+def usuario_escolhe_jogada(n, m):
     pass
 
 def partida():
@@ -93,12 +93,14 @@ def partida():
     m = int(input('Insira o numero máximo de peças para retirar: '))
 
     if n % (m + 1) == 0:
+        n = usuario_escolhe_jogada(n, m)
         print('Você começa')
     else:
         print('Computador começa')
 
     while True:
-        pass
+        n = computador_escolhe_jogada()
+        n = usuario_escolhe_jogada()
 
 def campeonato():
     pass
