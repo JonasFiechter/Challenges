@@ -1,15 +1,6 @@
-from time import sleep
+def multiples(number, max):
+    for n in range(max):
+        if (n + 1) >= number and (n + 1) % number == 0:
+            print(n + 1, end=' ')
 
-n = int(input('digite o valor de n: '))
-
-i = 0
-count = 0
-
-while count < n:
-    print('DENTRO DE COUNT', count, i)
-    sleep(1)
-    if i % 2 != 0:
-        print('DENTRO DO BLOCO IF IMPAR')
-        print(i)
-        count += 1
-    i += 1
+multiples(4, 100)

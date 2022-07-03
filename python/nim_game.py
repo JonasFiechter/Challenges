@@ -82,27 +82,99 @@ outros lugares!
 Veja um exemplo de como deve funcionar o jogo:
 '''
 
+
 def computador_escolhe_jogada(n, m):
-    return
+    def printa_p(p):
+        if p == 1:
+            print('\nO computador tirou uma peça.')
+        else:
+            print(f'\nO computador tirou {p} peças.')
+    for number in reversed(range(1, (m + 1))):
+        if (n - number) % (m + 1) == 0:
+            printa_p(number)
+            return number
+    printa_p(m)
+    return m
 
 def usuario_escolhe_jogada(n, m):
-    pass
+    user_input = int(input('\nQuantas peças você vai tirar? '))
+    if user_input <= m and user_input > 0:
+        if user_input == 1:
+            print('\nVocê tirou uma peça')
+        else:
+            print(f'\nVocê tirou {user_input} peças.')
+        return user_input
+    else:
+        print('\nOops! Jogada inválida! Tente de novo.')
+        return usuario_escolhe_jogada(n, m)
 
 def partida():
-    n = int(input('Insira o numero de peças: '))
-    m = int(input('Insira o numero máximo de peças para retirar: '))
+    
+    def check_round(n, player):
+        if n == 0 and player == 'pc':
+            print('Fim do jogo! O computador ganhou!')
+            return False
+        elif n == 0 and player == 'player':
+            print('Fim do jogo! Você ganhou!')
+            return False
+        elif n == 1:
+            print('Agora resta apenas uma peça no tabuleiro.')
+            return True
+        else:
+            print(f'Agora restam {n} peças no tabuleiro.')
+            return True
+    
+    n = int(input('\nQuantas peças? '))
+    m = int(input('Limite de peças por jogada? '))
 
     if n % (m + 1) == 0:
-        n = usuario_escolhe_jogada(n, m)
-        print('Você começa')
+        print('\nVocê começa!')
+        turn = 'player'
     else:
-        print('Computador começa')
+        print('\nComputador começa!')
+        turn = 'pc'
 
     while True:
-        n = computador_escolhe_jogada()
-        n = usuario_escolhe_jogada()
+        if turn == 'pc':
+            n -= computador_escolhe_jogada(n, m)
+            if not check_round(n, turn):
+                return turn
+            else:
+                turn = 'player'
+        elif turn == 'player':
+            n -= usuario_escolhe_jogada(n, m)
+            if not check_round(n, turn):
+                return turn
+            else:
+                turn = 'pc'
+
 
 def campeonato():
-    pass
+    score_player = 0
+    score_pc = 0
+    print('\nVoce escolheu um campeonato!')
+    for round_ in range(1, 4):
+        print(f'\n**** Rodada {round_} ****')
+        if partida() == 'pc':
+            score_pc += 1
+        elif partida() == 'player':
+            score_player += 1
 
-partida()
+    print('\n**** Final do campeonato! ****')
+    print(f'\nPlacar: Você {score_player} X {score_pc} Computador')
+
+
+def main():
+    print('Bem vindo ao jogo do NIM! Escolha:')
+    player_choice = input(f'\n1 - para jogar uma partida isolada\n'
+                          f'2 - para jogar um campeonato ')
+    if player_choice != '1' and player_choice != '2':
+        print('Opção inválida')
+        return main()
+    elif player_choice == '1':
+        partida()
+    else:
+        campeonato()
+    
+
+main()
