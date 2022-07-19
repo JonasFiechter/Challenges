@@ -57,4 +57,11 @@ print(interview([5, 5, 10, 10, 15, 15, 20], 120))
 print(interview([5, 5, 10, 10, 15, 15, 20, 20], 130))
 
 #  Solution 2
-###
+def interview_2(questions, total):
+    max_time_list = [5, 5, 10, 10, 15, 15, 20, 20]
+
+    for index, question_time in enumerate(questions):
+        if question_time > max_time_list[index]:
+            return 'disqualified'
+
+    return 'disqualified' if total > 120 or len(questions) != len(max_time_list) else 'qualified'
