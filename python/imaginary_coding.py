@@ -36,3 +36,25 @@ interview([5, 5, 10, 10, 15, 15, 20], 120) ➞ "disqualified"
 interview([5, 5, 10, 10, 15, 15, 20, 20], 130) ➞ "disqualified"
 # Solved all the questions in their respected time limits but exceeded the total
 '''
+
+#  Solution 1
+def interview(questions, total):
+    max_time_list = [5, 5, 10, 10, 15, 15, 20, 20]
+
+    for index, question_time in enumerate(questions):
+        if question_time > max_time_list[index]:
+            return 'disqualified'
+    
+    if total > 120 or len(questions) != len(max_time_list):
+        return 'disqualified'
+    
+    return 'qualified'
+
+print(interview([5, 5, 10, 10, 15, 15, 20, 20], 120))
+print(interview([2, 3, 8, 6, 5, 12, 10, 18], 64))
+print(interview([5, 5, 10, 10, 25, 15, 20, 20], 120))
+print(interview([5, 5, 10, 10, 15, 15, 20], 120))
+print(interview([5, 5, 10, 10, 15, 15, 20, 20], 130))
+
+#  Solution 2
+###
