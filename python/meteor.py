@@ -21,3 +21,13 @@ Notes
     For example, "y = -x + 2" will be shown as "y = -1x + 2".
 '''
 
+def will_hit(trajectory, position:tuple):
+    splited = trajectory.split(' ')
+    x_multipler, operator, integer = splited[2].replace('x', ''), splited[3], splited[4]
+    integer = int(operator + integer)
+    y = (int(position[0]) * int(x_multipler)) + integer
+    return True if int(position[1]) == y else False
+
+print(will_hit("y = 2x + 6", (3, 2)))
+print(will_hit("y = -4x + 6", (1, 2)))
+print(will_hit("y = 2x - 5", (0, 0)))
