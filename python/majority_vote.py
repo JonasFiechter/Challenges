@@ -16,10 +16,6 @@ If the list is empty, return None.
 '''
 
 #  Solution 1 (it doesn't solve the equal situations)
-from numpy import equal
-from pandas import options
-
-
 def majority_vote(list_):
     list_of_options = []
     count_of_options = []
@@ -44,18 +40,13 @@ def majority_vote(list_):
 
 #   Solution 2 (dicts usually makes things easier)
 def majority_vote(list_):
-    options_dict = {key: list_.count(key) for key in list_}
-
-    equal = list(options_dict.values())[0]
-    #  Check for equality
+    for key, value in {key: list_.count(key) for key in list_}.items():
+        if value > (len(list_) / 2):
+            return key
+    
+    return None
 
     
-    for key, value in options_dict.items():
-        if value == max(options_dict.values()):
-            return key
-    return options_dict
-
-
-
+print(majority_vote(["A", "A", "B"]))
 print(majority_vote(["A", "A", "A", "B", "C", "A"]))
 print(majority_vote(["A", "B", "B", "A", "C", "C"]))
