@@ -31,11 +31,10 @@ tu eres mi-bebe"
 
 #   Iteration solution
 def dakti(string):
-    words_list = string.split(' ')
     new_string = ''
 
     for number in range(9):
-        for word in words_list:
+        for word in string.split(' '):
             if str(number) in word:
                 new_string += word.replace(str(number), '') + ' '
 
