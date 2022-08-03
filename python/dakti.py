@@ -30,7 +30,7 @@ tu eres mi-bebe"
 '''
 
 #   Iteration solution
-def dakiti(string):
+def dakti(string):
     words_list = string.split(' ')
     new_string = ''
 
@@ -41,4 +41,4 @@ def dakiti(string):
 
     return new_string[:-1] # The list index at and is to remove the exceed space from the iteration
 
-print(dakiti("en5tere y2a bab1y y3o 4me s6e not7a cuand8o 9me-ves"))
+print(dakti("en5tere y2a bab1y y3o 4me s6e not7a cuand8o 9me-ves"))
