@@ -36,30 +36,24 @@ _______#
 def staircase(number):
     stairstring = ''
     level_count = (number - 1)
-
     if number > 0:
-    
         for floor in range(number):
             stairstring += '\n'
             for n2 in range(number):
                 if n2 >= level_count:
                     stairstring += '#'
                 else: stairstring += '_'
-                
             level_count -= 1
     
     else:
         number = number * (-1)
-        print(number)
-        level_count = (number * 1) - 1
-        print(level_count)
+        level_count = (number * 1) + 1
         for floor in range(number):
             stairstring += '\n'
-            for n2 in range(number):
-                if n2 >= level_count:
-                    stairstring += '_'
-                else: stairstring += '#'
-                    
+            for n2 in range(number, 0, -1):
+                if n2 < level_count:
+                    stairstring += '#'
+                else: stairstring += '_'
             level_count -= 1
     
     return stairstring[1:]
