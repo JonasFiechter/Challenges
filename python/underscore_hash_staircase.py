@@ -33,32 +33,46 @@ ______##
 _______#
 '''
 
+# Solution 1
 def staircase(number):
     stairstring = ''
-    level_count = (number - 1)
-    if number > 0:
-        for floor in range(number):
-            stairstring += '\n'
-            for n2 in range(number):
-                if n2 >= level_count:
-                    stairstring += '#'
-                else: stairstring += '_'
-            level_count -= 1
+    start = 1
+    end = number + 1
+    tick = 1
+    steps = number 
+
+    if number < 0:
+        steps = number * (-1)
+        tick = -1
+        end = 0
+        start = steps
+
+    # if number > 0:
+    for step_ in range(start, end, tick):
+        # print(f'first {first_step}  last {last_step} number => {number}')
+        stairstring += '\n'
+        for n2 in range(steps):
+            if n2 < steps - step_:
+                stairstring += '_'
+            else: stairstring += '#'
+
+    return stairstring
     
-    else:
-        number = number * (-1)
-        level_count = (number * 1) + 1
-        for floor in range(number):
-            stairstring += '\n'
-            for n2 in range(number, 0, -1):
-                if n2 < level_count:
-                    stairstring += '#'
-                else: stairstring += '_'
-            level_count -= 1
+    # else:
+    #     number = number * (-1)
+    #     level_count = (number * 1) + 1
+    #     for floor in range(number):
+    #         stairstring += '\n'
+    #         for n2 in range(number, 0, -1):
+    #             if n2 < level_count:
+    #                 stairstring += '#'
+    #             else: stairstring += '_'
+    #         level_count -= 1
     
-    return stairstring[1:]
+    
 
 
-print(staircase(3))
-print(staircase(6))
-print(staircase(-6))
+# print(staircase(3))
+# print(staircase(6))
+# print(staircase(-6))
+staircase(5)
