@@ -33,6 +33,7 @@ ______##
 _______#
 '''
 
+# Solution 1
 def staircase(number):
     stairstring = ''
     level_count = (number - 1)
@@ -59,6 +60,22 @@ def staircase(number):
     return stairstring[1:]
 
 
-print(staircase(3))
-print(staircase(6))
-print(staircase(-6))
+# print(staircase(3))
+# print(staircase(6))
+# print(staircase(-6))
+
+# Solution 2
+def staircase2(steps_number):
+    tick = steps_number
+    result = ''
+    for step in range(steps_number):
+        result += (
+            ''.join(['_' if (i + 1) < tick else '#' for i in range(steps_number)])
+            ) + '\n'
+        tick -= 1
+    
+    print(result)
+    
+
+
+staircase2(8)
