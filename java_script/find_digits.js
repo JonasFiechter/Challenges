@@ -12,4 +12,7 @@ function find_digits(number_) {
     return String(number_).length
 }
 
-console.log(find_digits('32'))
+const t = ['a', 'b', 'c', 'c']
+
+console.log(t.indexOf('c'))
+// console.log(find_digits('32'))
