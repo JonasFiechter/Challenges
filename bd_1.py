@@ -1,29 +1,4 @@
-def solution(sequence):
-    my_dict = {
-        '(': ')',
-        '[': ']',
-        '{': '}',
-    }
-    
-    inverse_dict = {
-        ')': '(',
-        ']': '[',
-        '}': '{'
-    }
-    
-    oppened_cursor = []
 
-    for char in sequence:
-        # When opening check
-        if char in my_dict.keys():
-            oppened_cursor.append(char)
-        
-        # When closing check
-        if char in my_dict.values():
-            if 
-
-
-print(solution('{[]}'))
 
 
 # def solution(a, b):
