@@ -41,7 +41,7 @@ def encrypt(word):
         'u': '3',
     }
 
-    for letter in word:
+    for letter in word[::-1]:
         if letter in my_dict.keys():
             new_word += my_dict[letter]
         else:
