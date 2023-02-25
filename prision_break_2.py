@@ -1,4 +1,5 @@
-'''Prison Break
+'''
+Prison Break
 A prison can be represented as a list of cells. Each cell contains exactly one 
 prisoner. A 1 represents an unlocked cell and a 0 represents a locked cell.
 
@@ -42,4 +43,30 @@ locks change to [0, 0, 0]. Since all cells are locked, you can release no more
 prisoners
 You always start within the leftmost element in the list 
 (the first prison cell). If all the prison cells to your right are zeroes, you 
-cannot free any more prisoners.'''
+cannot free any more prisoners.
+'''
+
+def freed_prisoners(p_list):
+    count = 0
+    
+    def switch(p_list):
+        for index, item in enumerate(p_list):
+            if item == 1:
+                p_list[index] = 0
+            else:
+                p_list[index] = 1
+        return p_list
+
+    for item in p_list:
+        if item == 1:
+            count += 1
+            p_list = switch(p_list)
+
+    return count
+
+
+if __name__ == '__main__':
+    print(freed_prisoners([1, 1, 0, 0, 0, 1, 0]))
+    print(freed_prisoners([1, 1, 1]))
+    print(freed_prisoners([0, 0, 0]))
+    print(freed_prisoners([0, 1, 1, 1]))
