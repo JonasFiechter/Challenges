@@ -37,6 +37,6 @@ def digits_count(number, count=1):
 
 print(digits_count(5666))
 print(digits_count(4666))
-print(digits_count(121317))
+print(digits_count(-231273683))
 print(digits_count(0))
 print(digits_count(12345))

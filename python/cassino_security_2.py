@@ -20,8 +20,8 @@ security("TTxxxx$xxGxx$Gxxx") ➞ "ALARM!"
 Notes
 Money at the extremes are safe.
 '''
-
-def security(cassino_str):
+# Logical
+def security_(cassino_str):
     thief_sight = False
     money_sight = False
     for char in cassino_str:
@@ -38,6 +38,35 @@ def security(cassino_str):
             thief_sight = False
     
     return "Safe"
+
+# Brute force
+def security(cassino_str):
+    def check_sides(index, string):
+        # Check left
+        for char in string[index::-1]:
+            if char == 'G':
+                break
+            elif char == 'T':
+                return False
+        # Check right
+        for char in string[index::]:
+            if char == 'G':
+                break
+            elif char == 'T':
+                return False
+
+        return True
+    
+    for index, char in enumerate(cassino_str):
+        if char == '$':
+            if check_sides(index, cassino_str):
+                pass
+            else:
+                return 'ALARM!'
+            
+    return 'Safe'
+
+    
 
 
 if __name__ == '__main__':
