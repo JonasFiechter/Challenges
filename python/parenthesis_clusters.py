@@ -17,7 +17,7 @@ Balanced: Every opening parens ( must exist with its matching closing parens )
 in the same cluster.
 '''
 
-def split(parenthesis):
+def split1(parenthesis):
     opened_count = 0
     temp = ''
     result = []
@@ -34,6 +34,12 @@ def split(parenthesis):
             temp = ''
 
     return result
+
+#   Solution 2 (working on it)
+def split(parenthesis):
+    temp = []
+
+    return temp
 
 if __name__ == '__main__':
     print(
