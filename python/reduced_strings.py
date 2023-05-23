@@ -26,6 +26,8 @@ reduced_string("fghiiijkllmnnno") ➞ "fghijkmno"
 reduced_string("chklssstt") ➞ "chkls"
 '''
 
+#TODO: Try to solve this with regular expressions
+
 def reduced_string(string):
     def delete_adjacent(index_list, string):
         new_string = ''
