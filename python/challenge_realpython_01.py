@@ -18,3 +18,40 @@ Is it possible to program a strong strategy?
 Want to make the strategy a bit more interesting? Add an additional constraint 
 to the challenge so that players can only use each number once.
 '''
+
+class Player:
+    def __init__(self, name) -> None:
+        self.score = 0
+        self.choices = []
+        self.name = name
+
+    def add_score(self, amount):
+        self.score += amount
+        print(f'Player {self.name} scored {amount} point(s) - Total: {self.score}')
+
+    def add_choice(self, choice):
+        self.choices.append(choice)
+
+def check_choices(choice_1, choice_2, choices=[]):
+    choices.append(choice_1)
+    choices.append(choice_2)
+
+    for choice in choices:
+        pass
+
+def main():
+    print('running')
+    player_1 = Player(name=input('Player 1, place your name: \n'))
+    player_2 = Player(name=input('Player 2, place your name: \n'))
+    round_count = 1
+
+    while True:
+        print(f'Round {round_count} started!')
+        player_1_choice = input(f'{player_1}, choose a number: \n')
+        player_2_choice = input(f'{player_2}, choose a number: \n')
+
+        check_choices(player_1_choice, player_2_choice)
+
+
+if __name__ == '__main__':
+    main()
