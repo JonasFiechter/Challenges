@@ -27,23 +27,39 @@ For the iterative version of this challenge, check out Part II.
 
 #  Ava, Mark, Sheila, Pete
 #   4    5      4      1
+# Recursive version
+def party_people(people_list:list=[], removed:bool=True):
+    if not removed:
+        print(len(people_list))
+        return
+    elif not people_list:
+        print(len(people_list))
+        return
+    
+    for person in people_list:
+        if person > len(people_list):
+            people_list.remove(person)
+            return party_people(people_list, removed=True)
+    return party_people(people_list, removed=False)
+    
+    
 
 # Iterable version
-def party_people(people_list: list):
-    removed = True
-    while removed:
-        for person in people_list:
-            print(person)
-            if person > len(people_list):
-                people_list.remove(person)
-                removed = True
-                break
-            removed = False
-        if not people_list: break
+# def party_people(people_list: list):
+#     removed = True
+#     while removed:
+#         for person in people_list:
+#             if person > len(people_list):
+#                 people_list.remove(person)
+#                 removed = True
+#                 break
+#             removed = False
+#         if not people_list: break
 
-    print(len(people_list))
+#     print(len(people_list))
 
 
 if __name__ == '__main__':
     party_people([4, 5, 4, 1])
     party_people([10, 12, 15, 15, 5])
+    party_people([2, 1, 2, 0])
