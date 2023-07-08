@@ -15,9 +15,28 @@ reversed string should not contain leading or trailing spaces.
 Try to solve this in linear time.
 '''
 
-def reverse_words(string):
-    return [i for i in string.split(' ')[::-1] if i]
+#   smart solution
+# def reverse_words(string):
+#     return [i for i in string.split(' ')[::-1] if i]
 
+
+def reverse_words(string):
+    words_list = []
+    temp_word = ''
+
+    for letter in string:
+        if letter != ' ':
+            temp_word += letter
+        elif ' ' and temp_word:
+            words_list.append(temp_word)
+            temp_word = ''
+        else:
+            continue
+            
+    if temp_word:
+        words_list.append(temp_word)
+
+    return ' '.join(words_list[::-1])
 
 print(reverse_words("the sky is blue"))
 print(reverse_words("  hello world!  "))
