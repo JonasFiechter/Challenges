@@ -32,6 +32,34 @@ Only one valid answer exists.
 
 '''
 
+def two_sum_3(sums:list, target:int):
+    for index, number in enumerate(sums):
+        for i, sub_number in enumerate(sums):
+            if index == i:
+                break
+            else:
+                if number + sub_number == target:
+                    return [index, i]
+
+
+
+
+
+if __name__ == '__main__':
+    print(two_sum_3([2,7,11,15], 9))
+    print(two_sum_3([3,3], target = 6))
+
+
+
+
+
+
+
+
+
+
+
+
 # Brute Force
 def two_sum(nums: list, target: int):
     for x in range(len(nums)):
@@ -51,4 +79,4 @@ def two_sum_2(nums: list, target):
         if rest in nums and nums.index(rest) != i:
             return [i, nums.index(rest)]
 
-print(two_sum_2([3,2,4], 6))
+# print(two_sum_2([3,2,4], 6))
