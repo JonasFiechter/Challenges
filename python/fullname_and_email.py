@@ -22,18 +22,20 @@ The attributes firstname and lastname are already made for you.
 See the Resources tab for some helpful tutorials on Python classes!
 '''
 
-class Employee:
-    def __init__(self, firstname, lastname):
-        self.firstname = firstname.capitalize()
-        self.lastname = lastname.capitalize()
-        self.fullname = self.firstname + ' ' + self.lastname
-        self.email = firstname.lower() + '.' + lastname.lower() + '@company.com'
+class Employee():
+    def __init__(self, f_name:str, l_name:str):
+        self.firstname = f_name
+        self.lastname = l_name
+        self.fullname = f_name.capitalize() + ' ' + l_name.capitalize()
+        self.domain = 'company.com'
+        self.email = f_name.lower() + '.' + l_name.lower() + '@' + self.domain
 
-
-emp_1 = Employee("john", "smith")
-print(emp_1.fullname)
-print(emp_1.email)
-
+emp_1 = Employee("John", "Smith")
 emp_2 = Employee("Mary",  "Sue")
-print(emp_2.email)
-emp_2.print_fullname()
+emp_3 = Employee("Antony", "Walker")
+
+print(
+    emp_1.fullname,
+    emp_2.email,
+    emp_3.firstname
+)
