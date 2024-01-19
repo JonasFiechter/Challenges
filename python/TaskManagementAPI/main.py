@@ -59,6 +59,8 @@ This challenge allows you to showcase your ability to design a RESTful API,
 handle CRUD operations, perform input validation, and consider additional 
 features for a real-world task management system.
 '''
+from src.components.task_model import Task
+
 
 def main():
     ...
