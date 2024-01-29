@@ -1,6 +1,4 @@
 '''
-Certainly! Here's a coding challenge for you:
-
 ### Challenge: Merge Intervals
 
 
@@ -30,10 +28,6 @@ remains unchanged.
 
 - The input list of intervals is non-empty and contains only positive integers.
 - The start time of each interval is less than or equal to the end time.
-
-Feel free to take your time to solve this problem. Once you have a solution, you 
-can compare it with the one I provide. If you have any questions or need further 
-clarification, feel free to ask!
 '''
 
 def merge_intervals(intervals: list):
@@ -51,4 +45,4 @@ def merge_intervals(intervals: list):
 if __name__ == '__main__':
     intervals = [(1, 3), (2, 6), (8, 10), (15, 18)]
     intervals = [(2, 3), (2, 6), (8, 10), (15, 18)]
-    merge_intervals(intervals)
+    merge_intervals(intervals)  

@@ -26,3 +26,26 @@ Exemplo 2:
 Entrada: pesos = [1.01, 1.01, 1.01, 1.4]
 Saída: 2
 '''
+
+def main(garbages):
+    travel_content = []
+    travel_count = 1
+    for garb in garbages:
+        print(f'Travel content -> {travel_content} | total weight {sum(travel_content)}')
+        if sum(travel_content) + garb <= 3:
+            travel_content.append(garb)
+        else:
+            print(f'Adding {garb} to new travel')
+            travel_content = [garb]
+            travel_count += 1
+
+    return travel_count
+
+if __name__ == '__main__':
+    pesos = [
+        ([1.01, 1.99, 2.5, 1.5, 1.01], 3),
+        ([1.01, 1.01, 1.01, 1.4], 2),
+    ]
+
+    for peso in pesos:
+        assert main(peso[0]) == peso[1]
